@@ -7,7 +7,16 @@ export default class Developer {
         this.lastName = lastName;
     }
 
-    sayHi() {
+    getFullName() {
         return(`${this.firstName} ${this.middleName} ${this.lastName}`);
     }
+
+    createFullNameHeading() {
+        let div = document.querySelector('.developer'),
+            h4 = document.createElement('h4');
+        h4.innerHTML = this.getFullName();
+        div.appendChild(h4);
+    }
 }
+
+
