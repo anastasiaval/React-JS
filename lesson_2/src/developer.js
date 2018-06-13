@@ -10,8 +10,8 @@ export default class Developer {
     }
 
     createFullNameHeading() {
-        let div = document.querySelector('.developer'),
-            h4 = document.createElement('h4');
+        const div = document.querySelector('.developer');
+        const h4 = document.createElement('h4');
         h4.innerHTML = this.getFullName();
         div.appendChild(h4);
     }

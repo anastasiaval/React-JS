@@ -1,5 +1,3 @@
-'use strict';
-
 import './style.css';
 
 import Developer from './developer';

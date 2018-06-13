@@ -1,4 +1,4 @@
-let now = new Date();
+const now = new Date();
 
 document.querySelector('.date').addEventListener('click', () => getDate());
 
