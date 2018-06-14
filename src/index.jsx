@@ -1,22 +1,15 @@
 import React, { Component } from 'react';
 import ReactDom from 'react-dom';
 
-import Menu from './Menu.jsx';
+import MainPage from './MainPage.jsx';
 
-const menuItems = [
-    {
-        link:'https://geekbrains.ru', title: 'Geekbrains'
-    },
-    {
-        link:'https://google.ru', title: 'Google'
-    }
-];
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 class App extends Component {
     render() {
         return (
             <div>
-                <Menu items={menuItems} />
+                <MainPage />
             </div>
         );
     }
