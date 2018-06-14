@@ -19,7 +19,7 @@ export default class ModalLogin extends Component {
 
     render() {
         return (
-            <div className="login">
+            <div className="login mt-3">
                 <Button outline color="primary" onClick={this.toggle}>{this.props.buttonLabel}</Button>
                 <Modal isOpen={this.state.modal} toggle={this.toggle}>
                     <ModalHeader toggle={this.toggle}>Welcome!</ModalHeader>

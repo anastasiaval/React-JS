@@ -4,7 +4,7 @@ import { Nav, NavItem, NavLink } from 'reactstrap';
 export default class Navigation extends Component {
     render() {
         return (
-            <div className="navigation">
+            <div className="navigation mt-3">
                 <Nav>
                     <NavItem>
                         <NavLink href="https://geekbrains.ru">Geekbrains</NavLink>

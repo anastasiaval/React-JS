@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 import { Container, Row, Col } from 'reactstrap';
 
 import ModalLogin from './Modal.jsx';
-import Navigation from "./Nav.jsx";
-import Articles from "./Articles.jsx";
+import Navigation from './Nav.jsx'
+import Articles from './Articles.jsx'
 
 export default class MainPage extends Component {
     render() {
