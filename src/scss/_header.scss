@@ -9,6 +9,9 @@
   padding-left: 15px;
   margin-right: auto;
   margin-left: auto;
+}
+
+.nav-container {
   display: flex;
   justify-content: space-between;
 }
@@ -30,9 +33,10 @@
   color: #fff;
 }
 
-a {
-  color: #fff;
-}
-a:hover {
+.nav-link:hover {
   color: rgba(255,255,255,.75);
+}
+
+.nav-link, .active:hover {
+  color: #fff;
 }

@@ -1,9 +1,37 @@
-import React, { Component, Fragment } from 'react';
+import React, { Component } from 'react';
+import { Row, Col } from 'reactstrap';
+
+import Article from 'components/Content/Article';
+import SearchWidget from 'components/Content/SearchWidget';
+import CategoriesWidget from 'components/Content/CategoriesWidget';
+import SideWidget from 'components/Content/SideWidget';
 
 export default class Content extends Component {
-    render() {
+    render () {
         return (
-            <Fragment></Fragment>
+            <div className="container">
+                <Row>
+                    <Col className="col-8">
+                        <h1 className="my-4">Page Heading <small>Secondary Text</small></h1>
+
+                        <Article/>
+
+                    </Col>
+                    <Col className="col-4">
+
+                        <SearchWidget/>
+
+                        <CategoriesWidget/>
+
+                        <SideWidget/>
+
+                    </Col>
+                </Row>
+
+
+
+
+            </div>
         );
     }
 }
