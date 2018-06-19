@@ -1,16 +1,16 @@
-import React, { Component } from 'react';
+import 'bootstrap/dist/css/bootstrap.min.css';
+
+import React, { Component, Fragment } from 'react';
 import ReactDom from 'react-dom';
 
-import MainPage from './MainPage.jsx';
-
-import 'bootstrap/dist/css/bootstrap.min.css';
+import HomePage from './Homepage.jsx';
 
 class App extends Component {
     render() {
         return (
-            <div>
-                <MainPage />
-            </div>
+            <Fragment>
+                <HomePage/>
+            </Fragment>
         );
     }
 }
