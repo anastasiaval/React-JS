@@ -1,16 +1,22 @@
-import React, { Component } from 'react';
-import { Container, Row, Col } from 'reactstrap';
+import React, { Component, Fragment } from 'react';
+import { Row, Col } from 'reactstrap';
+
+import Header from 'components/Header';
+import Content from 'components/Content';
+import Footer from 'components/Footer';
 
 export default class HomePage extends Component {
     render() {
         return (
-            <Container>
+            <Fragment>
+                <Header/>
                 <Row>
                     <Col>
-
+                        <Content/>
                     </Col>
                 </Row>
-            </Container>
+                <Footer/>
+            </Fragment>
         );
     }
 }

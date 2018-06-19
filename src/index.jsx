@@ -4,6 +4,7 @@ import ReactDom from 'react-dom';
 import HomePage from './Homepage.jsx';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
+import './scss/style.scss';
 
 class App extends Component {
     render() {

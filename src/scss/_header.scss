@@ -1,0 +1,38 @@
+.header {
+  background-color: #343a40;
+  padding: .5rem 1rem;
+}
+
+.container {
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+  display: flex;
+  justify-content: space-between;
+}
+
+.navbar-brand {
+  display: inline-block;
+  padding-top: .3125rem;
+  padding-bottom: .3125rem;
+  margin-right: 1rem;
+  font-size: 1.25rem;
+  line-height: inherit;
+  white-space: nowrap;
+  color: #fff;
+  text-decoration: none;
+  background-color: transparent;
+}
+
+.navbar-brand:hover, .active:hover {
+  color: #fff;
+}
+
+a {
+  color: #fff;
+}
+a:hover {
+  color: rgba(255,255,255,.75);
+}
