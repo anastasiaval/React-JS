@@ -1,3 +1,5 @@
+import './header.scss';
+
 import React, { Component } from 'react';
 
 import Navigation from 'components/Header/Nav';

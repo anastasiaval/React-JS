@@ -1,10 +1,9 @@
+import './content.scss';
+
 import React, { Component } from 'react';
 import { Row, Col } from 'reactstrap';
 
-import Article from 'components/Content/Article';
-import SearchWidget from 'components/Content/SearchWidget';
-import CategoriesWidget from 'components/Content/CategoriesWidget';
-import SideWidget from 'components/Content/SideWidget';
+import { Article, SearchWidget, CategoriesWidget, SideWidget } from 'components/Content';
 
 export default class Content extends Component {
     render () {

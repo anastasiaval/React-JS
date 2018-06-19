@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-export default class SearchWidget extends Component {
+export default class CategoriesWidget extends Component {
     render() {
         return (
             <div className="card my-4">
