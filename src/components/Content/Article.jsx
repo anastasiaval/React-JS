@@ -26,7 +26,7 @@ const Articles = [
         date: 'Posted on January 1, 2017 by ',
         authorpage: '#',
         author: 'Start Bootstrap',
-    }
+    },
 ];
 
 export default class Article extends Component {
@@ -46,3 +46,4 @@ export default class Article extends Component {
         );
     }
 }
+

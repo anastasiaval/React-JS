@@ -39,3 +39,4 @@ export default class CategoriesWidget extends Component {
         );
     }
 }
+
