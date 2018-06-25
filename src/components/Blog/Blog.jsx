@@ -30,7 +30,7 @@ export default class Blog extends PureComponent {
                         </div>
                     </div>
                 )}
-            <Pagination aria-label="Page navigation" className="pagination">
+            	<Pagination aria-label="Page navigation" className="pagination">
                 {new Array(5).fill(null).map((item, index)=>
                     <PaginationItem>
                         <PaginationLink onClick={this.loadPage(index + 1)} className="text-info" href="#">{index + 1}</PaginationLink>
