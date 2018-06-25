@@ -31,16 +31,11 @@ export default class Blog extends PureComponent {
                     </div>
                 )}
             <Pagination aria-label="Page navigation" className="pagination">
-                <PaginationItem>
-                    <PaginationLink previous href="#" />
-                </PaginationItem>
-                <PaginationItem>
-                    <PaginationLink onClick={this.loadPage(1)} className="text-info" href="#">{1}</PaginationLink>
-                </PaginationItem>
-                <PaginationItem>
-                    <PaginationLink next href="#" />
-                </PaginationItem>
-            </Pagination>
+                {new Array(5).fill(null).map((item, index)=>
+                    <PaginationItem>
+                        <PaginationLink onClick={this.loadPage(index + 1)} className="text-info" href="#">{index + 1}</PaginationLink>
+                    </PaginationItem>)}
+                </Pagination>
             </div>
         )
     }
