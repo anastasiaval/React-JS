@@ -1,16 +1,17 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-import React, { Component, Fragment } from 'react';
+import React, { Component } from 'react';
 import ReactDom from 'react-dom';
+import { BrowserRouter } from 'react-router-dom';
 
 import HomePage from './Homepage.jsx';
 
 class App extends Component {
     render() {
         return (
-            <Fragment>
+            <BrowserRouter>
                 <HomePage/>
-            </Fragment>
+            </BrowserRouter>
         );
     }
 }

@@ -1,5 +1,6 @@
 import React, { PureComponent } from 'react';
 import { Pagination, PaginationItem, PaginationLink } from 'reactstrap';
+import { Link } from 'react-router-dom';
 
 import Author from 'containers/AuthorContainer';
 
@@ -24,7 +25,7 @@ export default class Blog extends PureComponent {
                         <div className="card-body">
                             <h2 className="card-title">{article.title}</h2>
                             <p className="card-text">{article.body}</p>
-                            <a href="#" className="btn btn-primary">Read More &rarr;</a>
+                            <Link className="btn btn-primary" to={`/blog/${article.id}`}>Read More &rarr;</Link>
                             <div className="card-footer text-muted"><a href="#"><Author userId={article.userId}/></a>
                             </div>
                         </div>

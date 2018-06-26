@@ -1,6 +1,6 @@
 import React, { PureComponent, Fragment } from 'react';
 
-import UserList from 'components/UserList';
+import User from 'components/User';
 
 export default class UserListContainer extends PureComponent {
     constructor(props) {
@@ -8,23 +8,20 @@ export default class UserListContainer extends PureComponent {
 
         this.state = {
             loading: false,
-            page: 1,
-            users: []
+            user: {}
         };
     }
 
     load() {
-        const {page, users} = this.state;
-        if(page === 1) {
-            this.setState({loading: true});
-        }
-        fetch(`https://jsonplaceholder.typicode.com/users?limit=10&_page=${page}`)
+        const { match } = this.props;
+
+        this.setState({ loading: true });
+        fetch(`https://jsonplaceholder.typicode.com/users/${match.params.id}`)
             .then((response) => response.json())
-            .then((results) => {
+            .then((user) => {
                 this.setState({
                     loading: false,
-                    page: page + 1,
-                    users: users.concat(results)
+                    user
                 })
             })
             .catch(() => {
@@ -36,15 +33,11 @@ export default class UserListContainer extends PureComponent {
         this.load();
     }
 
-    handleLoadMore = () => {
-        this.load();
-    };
-
     render() {
-        const { users, loading } = this.state;
+        const { user, loading } = this.state;
         return (
             <Fragment>
-                {loading ? <div>Loading...</div> : <UserList onLoadMore={this.handleLoadMore} users={users} />}
+                {loading ? <div>Loading...</div> : <User user={user} />}
             </Fragment>
         );
     }

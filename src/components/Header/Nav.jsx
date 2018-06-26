@@ -1,21 +1,22 @@
 import React, { Component } from 'react';
-import { Nav, NavItem, NavLink } from 'reactstrap';
+import { Nav, NavItem } from 'reactstrap';
+import { Link } from 'react-router-dom';
 
 export default class Navigation extends Component {
     render() {
         return (
                 <Nav>
                     <NavItem>
-                        <NavLink className="active" href="#">Home</NavLink>
+                        <Link to="/">Home</Link>
                     </NavItem>
                     <NavItem>
-                        <NavLink href="#">Blog</NavLink>
+                        <Link to="/blog">Blog</Link>
                     </NavItem>
                     <NavItem>
-                        <NavLink href="#">Comments</NavLink>
+                        <Link to="/comments">Comments</Link>
                     </NavItem>
                     <NavItem>
-                        <NavLink href="#">Users</NavLink>
+                        <Link to="/users">Users</Link>
                     </NavItem>
                 </Nav>
         );
