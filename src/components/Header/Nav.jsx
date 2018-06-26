@@ -9,13 +9,13 @@ export default class Navigation extends Component {
                         <NavLink className="active" href="#">Home</NavLink>
                     </NavItem>
                     <NavItem>
-                        <NavLink href="#">About</NavLink>
+                        <NavLink href="#">Blog</NavLink>
                     </NavItem>
                     <NavItem>
-                        <NavLink href="#">Services</NavLink>
+                        <NavLink href="#">Comments</NavLink>
                     </NavItem>
                     <NavItem>
-                        <NavLink href="#">Contact</NavLink>
+                        <NavLink href="#">Users</NavLink>
                     </NavItem>
                 </Nav>
         );
