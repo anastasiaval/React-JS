@@ -1,24 +1,20 @@
 import './assets/style.scss';
 
 import React, { Component, Fragment } from 'react';
+import { Switch, Route } from 'react-router-dom';
 
 import Header from 'components/Header';
-import Content from 'components/Content';
-import Blog from 'containers/BlogContainer';
-import Comments from 'containers/CommentsContainer';
-import UserList from 'containers/UserListContainer';
 import Footer from 'components/Footer';
+import routes from './routes';
 
 export default class HomePage extends Component {
     render() {
         return (
             <Fragment>
                 <Header/>
-                <Blog />
-                {/*<Content/>
-+                    <Blog/>
-+                    <Comments/>
-+                    <UserList/>*/}
+                <Switch>
+                    {routes.map((route) => <Route {...route} />)}
+                </Switch>
                 <Footer/>
             </Fragment>
         );

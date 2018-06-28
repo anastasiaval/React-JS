@@ -1,24 +1,29 @@
 import React, { Component } from 'react';
-import { Nav, NavItem, NavLink } from 'reactstrap';
+import { Nav, NavItem } from 'reactstrap';
+import { Link, withRouter } from 'react-router-dom';
+import classNames from 'classnames';
 
-export default class Navigation extends Component {
+class Navigation extends Component {
     render() {
+        const { location } = this.props;
         return (
                 <Nav>
-                    <NavItem>
-                        <NavLink className="active" href="#">Home</NavLink>
+                    <NavItem className={classNames({ active: location.pathname === '/' })}>
+                        <Link to="/">Home</Link>
                     </NavItem>
-                    <NavItem>
-                        <NavLink href="#">Blog</NavLink>
+                    <NavItem className={classNames({ active: location.pathname === '/blog' })}>
+                        <Link to="/blog">Blog</Link>
                     </NavItem>
-                    <NavItem>
-                        <NavLink href="#">Comments</NavLink>
+                    <NavItem className={classNames({ active: location.pathname === '/comments' })}>
+                        <Link to="/comments">Comments</Link>
                     </NavItem>
-                    <NavItem>
-                        <NavLink href="#">Users</NavLink>
+                    <NavItem className={classNames({ active: location.pathname === '/users' })}>
+                        <Link to="/users">Users</Link>
                     </NavItem>
                 </Nav>
         );
     }
 }
+
+export default withRouter(Navigation)
 
