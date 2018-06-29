@@ -7,3 +7,4 @@ export default createStore(
     reducer,
     applyMiddleware(logger)
 );
+

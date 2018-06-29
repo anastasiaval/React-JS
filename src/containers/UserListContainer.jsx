@@ -54,3 +54,4 @@ function mergeMap(stateProps, dispatchProps, ownProps) {
 }
 
 export default connect(mapStateToProps, mapDispatchToProps, mergeMap)(UserListContainer);
+
