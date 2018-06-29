@@ -4,9 +4,8 @@ import { connect } from 'react-redux';
 import User from 'components/User';
 
 class UserListContainer extends PureComponent {
-
     render() {
-        const { user, loading } = this.props;
+        const { user } = this.props;
         return (
             <Fragment>
                 <User user={user} />
