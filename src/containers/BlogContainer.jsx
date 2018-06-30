@@ -1,49 +1,58 @@
 import React, {PureComponent, Fragment} from 'react';
+import { connect } from 'react-redux';
 
+import { loadBlog } from 'actions/blog';
 import Blog from 'components/Blog';
 
-export default class BlogContainer extends PureComponent {
-    constructor(props) {
-        super(props);
-
-        this.state = {
-            loading: false,
-            articles: []
-        };
-    }
-
-    load(page) {
-        fetch(`https://jsonplaceholder.typicode.com/posts?limit=10&_page=${page}`)
-            .then((response) => response.json())
-            .then((results) => {
-                this.setState({
-                    loading: false,
-                    articles: results
-                })
-            })
-            .catch(() => {
-                this.setState({ loading: false });
-            });
-    }
-
+class BlogContainer extends PureComponent {
     componentDidMount() {
-        this.load(1);
+        const { load, articles } = this.props;
+
+        if (!articles.length) {
+            load();
+        }
     }
 
-    handleLoadPage = (page, e) => {
-        e.preventDefault();
-        this.load(page);
+    handleLoadMore = () => {
+        const { load } = this.props;
+
+        load();
     };
 
     render() {
-        const {articles, loading} = this.state;
-
+        const {articles, loading} = this.props;
         return (
             <Fragment>
-                {loading ? <div>Loading...</div> :
-                    <Blog loadPage={this.handleLoadPage} articles={articles}/>}
+                {loading && !articles.length ? <div>Loading...</div> :
+                    <Blog onLoadMore={this.handleLoadMore} articles={articles}/>}
             </Fragment>
         );
     }
 }
+
+function mapStateToProps(state, props) {
+    return {
+        ...props,
+        page: state.articles.page,
+        loading: state.articles.loading,
+        articles: state.articles.articles,
+    };
+}
+
+function mapDispatchToProps(dispatch, props) {
+    return {
+        ...props,
+        load: loadBlog.bind(null, dispatch),
+    };
+}
+
+function mergeMap(stateProps, dispatchProps, ownProps) {
+    return {
+        ...stateProps,
+        ...ownProps,
+        load: () => dispatchProps.load(stateProps.page),
+    };
+}
+
+export default connect(mapStateToProps, mapDispatchToProps, mergeMap)(BlogContainer);
 

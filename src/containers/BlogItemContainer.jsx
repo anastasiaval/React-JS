@@ -1,45 +1,22 @@
 import React, {PureComponent, Fragment} from 'react';
+import { connect } from 'react-redux';
 
 import BlogItem from 'components/BlogItem';
 
-export default class BlogItemContainer extends PureComponent {
-    constructor(props) {
-        super(props);
-
-        this.state = {
-            loading: false,
-            article: {}
-        };
-    }
-
-    load() {
-        const { match } = this.props;
-
-        this.setState({ loading: true });
-        fetch(`https://jsonplaceholder.typicode.com/posts/${match.params.id}`)
-            .then((response) => response.json())
-            .then((article) => {
-                this.setState({
-                    loading: false,
-                    article
-                })
-            })
-            .catch(() => {
-                this.setState({ loading: false });
-            });
-    }
-
-    componentDidMount() {
-        this.load();
-    }
-
+class BlogItemContainer extends PureComponent {
     render() {
-        const { article, loading } = this.state;
+        const { article } = this.props;
         return (
             <Fragment>
-                {loading ? <div>Loading...</div> : <BlogItem article={article} />}
+                <BlogItem article={article} />
             </Fragment>
         );
     }
 }
+
+export default connect(
+    (state, props) => ({
+        article: state.articles.articles.find((article) => article.id === +props.match.params.id)
+    })
+)(BlogItemContainer);
 
